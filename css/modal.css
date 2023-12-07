@@ -1,0 +1,392 @@
+.previewModal {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all .25s;
+    position: fixed;
+    z-index: 100;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    background-color: rgba(0,0,0,0.6);
+    transition: all .25s;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .unhide {
+    display: block !important;
+  }
+
+  .form-paragraph-row-preview {
+    display: flex;
+    align-items: baseline;
+    padding: 7px 0; 
+  }
+
+  .form-paragraph-row-preview p {
+      white-space: nowrap;
+      padding-right: 10px;
+  }
+
+  .form-row-preview {
+    display: flex;
+    align-items: baseline;
+    padding: 7px 0;
+  }
+
+    .form-row-preview p {
+        white-space: nowrap;
+        padding-right: 25px;
+    }
+  
+  .preview-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #000000;
+    width: 80%;
+    font-size: 1.1rem;
+  }
+
+  .close-preview {
+    font-size: 3.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    float: right;
+    color: #fff;
+    top: -55px;
+    right: -30px;
+  }
+
+  .dualRadioChecked {
+    background-color: #f1f1f1 !important;
+    pointer-events: none;
+  }
+
+  .dualRadioUnchecked {
+    background-color: #ffffff !important;
+    pointer-events: none;
+  }
+
+  .fields-block-preview {
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 25px 20px; 
+  }
+
+  .disabled-preview {
+    /*background-color: #f1f1f1 !important;*/
+    pointer-events: none;
+    color: #000000 !important;
+    background-color: #fff !important;
+    font-weight: 700 !important;
+    border: none !important;
+  }
+
+  .form-preview{
+    position: absolute;
+    background: #ffffff;
+    right: 350px;
+    top: 0;
+    width: calc(100% - 350px);
+    z-index: 0;
+    height: -webkit-fill-available;
+    overflow: overlay;
+    scroll-behavior: smooth;
+}
+
+  /* Company Details SideBar */
+  .form-side-header-preview{
+    position: static;
+    height: 100vh;
+    width: 350px;
+    background: #F4F4F4;
+    z-index: 5;
+    text-align: right;
+    padding: 40px 30px;
+    transition: 0.5s ease;
+}
+
+.form-fields-preview{
+    top: 0;
+    width: 100%;
+    position: relative;
+}
+
+.AddInfoArea-preview label {
+    display: block;
+    width: 290px;
+    height: 178px;
+
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: alias;
+}
+
+.card-preview {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+.card-preview div {
+    height: 100%;
+    width: 100%;
+    background: #fdfdfd;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.FormName-Preview{
+    font-size: 20px;
+    padding-top: 5px;
+    font-weight: 500;
+}
+
+.ProgressTab-Preview {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-self: start;
+    padding: 20px 0;
+    position: relative;
+}
+
+.FormNum-Preview {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-top: 25px;
+}
+
+.ProgressTab-Preview li {
+    list-style: none;
+    padding: 7px 5px;
+    display: flex;
+}
+
+.ProgressTab-Preview li a {
+    text-decoration: none;
+    color: #8b8b8b;
+    display: block;
+    padding: 2px 0px;
+}
+
+.ProgressTab-Preview li:hover {
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  
+.ProgressTab-Preview li:hover span.progress-num {
+    color: #11101d;
+    border: 2px solid #11101d;
+    font-weight: 500;
+  }
+  
+.ProgressTab-Preview li:hover a {
+    color: #11101d;
+    font-weight: 500;
+  }
+
+.ProgressTab-Preview ul {
+    border-top: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
+    padding: 10px 0px;
+}
+
+.Regulations-Preview {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 5px;
+
+}
+.flip-box-content-front-preview{
+    padding-top: 5px;
+}
+
+.flip-box-content-front-preview li {
+    list-style: none;
+    padding: 2px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.flip-box-content-front-preview li i {
+    font-size: 16.2px;
+    font-weight: 500;
+    padding: 0px 5px;  
+}
+
+.flip-box-content-front-preview ul {
+    font-size: 14px;
+}
+
+.CompanyEngName-Preview {
+    padding: 2px 0 0 0;
+    direction: ltr;
+    font-size: 1rem;
+}
+
+.flip-box-content-back-preview li {
+    list-style: none;
+    padding: 2px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.flip-box-content-back-preview li i {
+    font-size: 16.2px;
+    font-weight: 500;
+    padding: 0px 5px;  
+}
+
+.flip-box-content-back-preview ul {
+    font-size: 14px;
+}
+
+.flip-box-content-back-preview {
+    align-items: center;
+    padding: 10px 0;
+}
+
+/*Select Box*/
+.select-box-preview {
+    position: relative;
+    display: inline-block;
+    color: #000000;
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+
+.select-box-preview ul {
+    z-index: 10;
+}
+ 
+.select-box__current-preview {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.01);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: 700;
+  }
+
+  /* CSS styles for datepicker field */
+.date-field-preview {
+    height: 45px;
+    width: 170px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: right;
+    padding: 10px;
+    font-size: 1.05rem;
+    color: #000000;
+    align-items: self-end;
+}
+
+  /* CSS styles for CB */
+.inp-cbx-preview:checked + .cbx span:first-child {
+    background: #f1f1f1;
+    border-color: #f1f1f1;
+    animation: wave 0.3s ease;
+    
+}
+
+.inp-cbx-preview:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+
+.inp-cbx-preview:checked + .cbx span:first-child:before {
+    transform: scale(2.5);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  #CBPreview svg {
+    -webkit-filter: invert(50%); /* safari 6.0 - 9.0 */
+            filter: invert(50%);
+  }
+
+  #CBPrint svg {
+    -webkit-filter: invert(50%); /* safari 6.0 - 9.0 */
+            filter: invert(50%);
+  }
+
+  .drop-container-preview {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 10px;
+    color: #000000;
+    pointer-events: none;
+}
+
+.filePreview {
+    display: flex;
+    align-items: center;
+}
+
+.fileIconPreview {
+    color: #000000;
+    font-size: 1.4rem;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+
+.fileNamePreview {
+    padding-right: 10px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.radioPreviewChecked{
+    border-color: #000000 !important;
+    --c: #000000 !important;
+    pointer-events: none;
+}
+
+.radioPrintChecked{
+    border-color: #000000 !important;
+    --c: #000000 !important;
+    pointer-events: none;
+}
+
+#ReferenceMeetingDatePreview::-webkit-calendar-picker-indicator,
+#ConveningDecisionDatePreview::-webkit-calendar-picker-indicator,
+#MeetingDatePreview::-webkit-calendar-picker-indicator,
+#MeetingTimePreview::-webkit-calendar-picker-indicator,
+#MeetingEffectiveDatePreview::-webkit-calendar-picker-indicator,
+#QuorumPostponedMeetingDatePreview::-webkit-calendar-picker-indicator,
+#QuorumPostponedMeetingTimePreview::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+#ReferenceMeetingReasonPreview, #MeetingAddressPreview, #ReasonsForEarlierDateOfConveningPreview,
+#ItemSubjectPreview, #ItemSubject2Preview, #ItemSubject3Preview, #OtherFileDetailsPreview,
+#ValidQuorumConditionPreview, #QuorumPostponedMeetingAddressPreview, #MeetingExtraInformationPreview,
+#TextHofshiPreview {
+    padding: 0 !important;
+}
+
+

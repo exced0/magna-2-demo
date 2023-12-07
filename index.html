@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> מגנא | דיווח </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formsList.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/select.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/upload.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar" id="sideBarPannel">
+    <!-- <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">מגנא דיווח</span>
+    </div> -->
+    
+    <div class="logo-details">
+        <span class="logo" onclick="window.location.href='index.html'">
+            <img src="img\logo.png" alt="logo">
+        </span>
+        <div class="text logo-name">
+            <span class="app">מגנא</span>
+            <span class="sub-app">אתר דיווח</span>
+        </div>
+        <i class='bx bx-chevron-right toggle'></i>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <div class="profile-details">
+        <div class="profile-content">
+            <img src="img/user_logo_2.png" alt="profileImg">
+        </div>
+        <div class="name-job">
+            <div class="profile_name">ישראל ישראל</div>
+            <div class="job">איילון חברה לביטוח בע"ם</div>
+        </div>
+        <i class='bx bx-dots-vertical-rounded' ></i>
+        </div>
+      </li>
+      <li>
+        <a href="#dashboard" onclick="showSection('dashboard')">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">דף הבית</span>
+        </a>
+        <ul class="sub-menu blank">
+            <li><a class="link_name" href="#dashboard">דף הבית</a></li>
+          </ul>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#form-search" onclick="showSection('form-search')">
+            <i class='bx bx-search'></i>
+            <span class="link_name">איתור טופס</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#form-search">איתור טופס</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li>
+        <div class="icon-link">
+          <a href="#upload">
+            <i class='bx bx-cloud-upload' ></i>
+            <span class="link_name">טעינה</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#upload">טעינה</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-edit-alt'></i>
+            <span class="link_name">דוח מתקן</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-folder-plus'></i>
+            <span class="link_name">דוח משלים</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-code-alt'></i>
+            <span class="link_name">בדיקה</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-save'></i>
+            <span class="link_name">שמירה</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-printer' ></i>
+            <span class="link_name">הדפסה</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-show-alt'></i>
+            <span class="link_name">הצגה</span>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-paper-plane' ></i>
+            <span class="link_name">שליחה</span>
+          </a>
+        </div>
+      </li> -->
+      
+      <li>
+        <a href="#">
+          <i class='bx bx-list-ul'></i>
+          <span class="link_name">דיווחים אחרונים</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="">דיווחים אחרונים</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class='bx bx-message-rounded-dots'></i>
+          <span class="link_name">הודעות</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="">הודעות</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <div class="icon-link">
+          <a href="#">
+            <i class='bx bx-info-circle'></i>
+            <span class="link_name">מידע נוסף</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a style="white-space: nowrap;" class="link_name" href="#">מידע נוסף</a></li>
+          <li><a href="#">כללי דיווח</a></li>
+          <li><a href="#">תמיכה</a></li>
+          <li><a href="#">תנאי שימוש</a></li>
+          <li><a href="#">אתר מגנא</a></li>
+          <li><a href="#">אתר הרשות</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="app-section" id="appSection">
+    <section  id="dashboard">
+      <div class="dashboard"></div>
+      <!-- <div class="form-content">
+          <span class="text">HOME SCREEN</span>
+        </div> -->
+    </section>
+    <section id="form-search">
+      <div class="container">
+        <div class="search-container">
+          <i class="bx bx-search"></i>
+          <input type="text" id="search-input" placeholder="חיפוש לפי מספר הטופס">
+        </div>
+        <table id="public-table" dir="rtl">
+          <thead>
+            <div class="formsListTitles">
+              <img src="img/arrows_grey_blue.png" class="formsListArrows">
+              <span>טפסים פומביים</span>
+            </div>
+            <tr>
+              <th class="formNameColl">שם הטופס</th>
+              <th class="formTitleColl">הנדון</th>
+            </tr>
+          </thead>
+          <tbody id="public-table-body">
+            <!-- Table rows will be dynamically generated here -->
+          </tbody>
+        </table>
+        <table id="non-public-table">
+          <thead>
+            <div class="formsListTitles">
+              <img src="img/arrows_grey_blue.png" class="formsListArrows">
+              <span>טפסים פומביים</span>
+            </div>
+            <tr>
+              <th class="formNameColl">שם הטופס</th>
+              <th class="formTitleColl">הנדון</th>
+            </tr>
+          </thead>
+          <tbody id="non-public-table-body">
+            <!-- Table rows will be dynamically generated here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="form460" style="display:none">
+      <div class="form-side-header">
+        <div class="CompanyDetailsArea">
+          <div class="CompanyHebName">איילון חברה לביטוח בע"מ</div>
+          <div class="CompanyEngName">Ayalon Insurance Ltd.</div>
+          <div class="CompanyID">(מספר ברשם: 654865432)</div>
+          <div class="AssigneeName">
+            <span style="font-weight: 600;">דווח ע"י: </span>ישראל ישראל, מזכיר
+          </div>
+        </div>
+        <div class="FormNum">
+          <div class="FormID">א460</div>
+          <div class="FormType">פומבי</div>
+        </div>
+        <div class="FormName">דוח מיידי על אסיפה</div>
+        <div class="Regulations">תקנה 8 לתקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015 </div>
+        <nav class="ProgressTab">
+          <ul>
+            <li class=""><span class="progress-num">1</span><a href="#block-1">פרטי אסיפה</a></li>
+            <li class=""><span class="progress-num">2</span><a href="#block-2">פרטי נייר</a></li>
+            <li class=""><span class="progress-num">3</span><a href="#block-3">על סדר היום</a></li>
+            <li class=""><span class="progress-num">4</span><a href="#block-4">קבצים מצורפים</a></li>
+            <li class=""><span class="progress-num">5</span><a href="#block-5">מניין ומיקום</a></li>
+          </ul>
+          <div class="progress-line"></div> <!-- Added line -->
+        </nav> 
+        <div class="AddInfoArea">
+          <label>
+            <input type="checkbox" id="hiddenCB"/>
+            <div class="card">
+                <div class="front">
+                  <div class="flip-box-content-front">
+                    <span style="font-weight: 600;font-size: 16px;">פרטי החברה</span>
+                      <ul class="">
+                        <li >
+                          <i class='bx bx-buildings' ></i>
+                          <span>אבא הילל סילבר 12, רמת גן</span>
+                        </li>
+                        <li>
+                          <i class='bx bx-phone-call'></i>
+                          <span>077-7777777, 03-5540324</span>
+                        </li>
+                        <li>
+                          <i class='bx bx-envelope' ></i>
+                          <span>contact@ayalon-ins.co.il</span>
+                        </li>
+                        <li>
+                          <i class='bx bx-laptop' ></i>
+                          <a href="https://www.ayalon-ins.co.il/" target=”_blank”>www.ayalon-ins.co.il</a>
+                        </li>
+                      </ul>
+                      <i class='bx bx-dots-horizontal-rounded' style="padding-top:10px;font-size:18px"></i>
+                  </div>
+                </div>
+                <div class="back">
+                  <div class="flip-box-content-back">
+                    <span style="font-weight: 600;font-size: 16px;">שמות קודמים</span>
+                    <ul style="padding-bottom: 10px;">
+                      <li >
+                        <span>איילון אחזקות בע"מ</span>
+                      </li>
+                    </ul>
+                    <span style="font-weight: 600;font-size: 16px;">פרטי חותם</span>
+                    <ul class="">
+                      <li >
+                        <i class='bx bx-buildings' ></i>
+                        <span>אבא הילל סילבר 12, רמת גן</span>
+                      </li>
+                      <li>
+                        <i class='bx bx-phone-call'></i>
+                        <span>077-7777777, 03-5542361</span>
+                      </li>
+                      <li>
+                        <i class='bx bx-envelope' ></i>
+                        <span>israel-i@ayalon-ins.co.il</span>
+                      </li>
+                    </ul>
+                    <i class='bx bx-dots-horizontal-rounded' style="padding-top:5px;font-size:18px"></i> 
+                  </div>
+                </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="form">
+        <div class="sticky">
+          <ul class="nav-links-2">
+            <li id="load-btn">
+              <a href="#" >
+                <i class='bx bx-cloud-upload'></i>
+                <span>טעינה</span>
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                <i class='bx bx-edit-alt'></i>
+                <span>דוח מתקן</span>
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                <i class='bx bx-folder-plus'></i>
+                <span>דוח משלים</span>
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                <i class='bx bx-code-alt'></i>
+                <span>בדיקה</span>
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                <i class='bx bx-save'></i>
+                <span>שמירה</span>
+              </a>
+            </li>
+            <li id="printBtn">
+              <a href="#">
+                <i class='bx bx-printer' ></i>
+                <span>הדפסה</span>
+              </a>
+            </li>
+            <li id="previewBtn">
+                <a href="#">
+                  <i class='bx bx-show-alt'></i>
+                  <span>הצגה</span>
+                </a>
+            </li>
+            <li >
+                <a href="#">
+                  <i class='bx bx-paper-plane' ></i>
+                  <span>שליחה</span>
+                </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="form-fields" id="form-body">
+          <form id="Alef-460">
+            <div class="fields-block" id="block-1">
+              <div class="form-row">
+                <p>האם קיימת אפשרות להצבעה באמצעות מערכת ההצבעה האלקטרונית?</p>
+                <div class="dropdown-toggle" style="margin-right: 10px;cursor:pointer;">
+                  <input type="radio" name="sizeBy" value="weight" id="sizeWeight" style="display: none;"/>
+                  <label for="sizeWeight" id="toggle-label">כן</label>
+                  <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensions" style="display: none;"/>
+                  <label for="sizeDimensions" id="toggle-label">לא</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <p>הנאמן מודיע על: </p>
+                <div class="select-box" id="MeetingReportType" style="width:350px" >
+                  <div class="select-box__current" id="MeetingReportTypeSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כינוס אסיפה</li>
+                    <li class="select-box__list-item" data-value="2">קיום אסיפת המשך</li>
+                    <li class="select-box__list-item" data-value="3">דחיית אסיפה</li>
+                    <li class="select-box__list-item" data-value="5">ביטול אסיפה</li>
+                    <li class="select-box__list-item" data-value="6">כינוס אסיפה ע"י בית משפט</li>
+                    <li class="select-box__list-item" data-value="7">דחיית אסיפה ע"י בית משפט</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-row">
+                <p>מספר האסמכתא של ההודעה האחרונה על האסיפה הוא </p>
+                <div>
+                <input class="reference-num" type="text" id="ReferenceNum" placeholder="xxxx-xx-xxxxxx" maxlength="14">
+                <div class="reference-num__label" id="ReferenceNumError"></div></div>
+                <p>, שזומנה לתאריך</p>
+                <input class="date-field" type="date" id="ReferenceMeetingDate" name="datepicker">
+              </div>
+              <div class="form-row" style="align-items: baseline;">
+                <p >סיבת דחייה או ביטול : </p>
+                <div class="select-box" id="RejectionReason" style="width:250px">
+                  <div class="select-box__current" id="RejectionReasonSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">אין מניין חוקי</li>
+                    <li class="select-box__list-item" data-value="2">לא דנו בכל הנושאים</li>
+                    <li class="select-box__list-item" data-value="3">אחר</li>
+                  </ul>
+                </div>
+                <div id="ReferenceMeetingReason"  placeholder=" " maxlength="1000" contenteditable="false" ></div>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר: יש להתייחס למספר אסמכתא של ההודעה האחרונה של כינוס או דחיית האסיפה.</span>
+              </div>
+              <br />
+              <br />
+              <div class="form-paragraph-row">
+                <p><b>1. </b> בתאריך:</p>
+                <input class="date-field" type="date" id="ConveningDecisionDate" name="datepicker">
+              </div>
+              <div class="form-row">
+                <p>הוחלט על</p>
+                <div class="select-box disabled" id="SummonsOrReject" style="width:350px" >
+                  <div class="select-box__current" id="SummonsOrRejectSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                  </ul>
+                </div>
+                <div class="select-box disabled" id="MeetingType" style="width:250px" >
+                  <div class="select-box__current" id="MeetingTypeSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-row">
+                <p>שתתקיים ביום</p>
+                <div class="select-box" id="MeetingDay" style="width:100px" >
+                  <div class="select-box__current" id="MeetingDaySelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">א'</li>
+                    <li class="select-box__list-item" data-value="2">ב'</li>
+                    <li class="select-box__list-item" data-value="3">ג'</li>
+                    <li class="select-box__list-item" data-value="4">ד'</li>
+                    <li class="select-box__list-item" data-value="5">ה'</li>
+                    <li class="select-box__list-item" data-value="6">ו'</li>
+                    <li class="select-box__list-item" data-value="7">שבת</li>
+                  </ul>
+                </div>
+                <p>בתאריך: </p>
+                <input class="date-field" type="date" id="MeetingDate" name="datepicker">
+                <p>בשעה: </p>
+                <input class="date-field" id="MeetingTime" type="time" name="appt-time" value="--:--" />
+              </div>
+              <div class="form-row" style="align-items: baseline;">
+                <p>בכתובת:</p>
+                <div id="MeetingAddress" type="textarea" placeholder=" " maxlength="100" contenteditable="true" ></div>
+              </div>
+              <div class="form-row" style="align-items: baseline;">
+                <p >הסיבות להקדמת מועד הכינוס לפי סעיף 35יב1 לחוק:</p>
+                <div id="ReasonsForEarlierDateOfConvening" type="textarea" placeholder=" " maxlength="1000" contenteditable="true" style="width: 500px"></div>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר: מועד כינוס האסיפה לא יהיה מוקדם משבעה ימים ולא מאוחר מ-21 ימים ממועד הזימון; ואולם הנאמן רשאי להקדים את כינוס האסיפה, ליום אחד לפחות לאחר מועד הזימון, אם סבר כי הדבר דרוש לשם הגנה על זכויות המחזיקים בכפוף להוראות סעיף 35יב24; עשה כן, ינמק הנאמן את הסיבות להקדמת מועד הגיוס. </span>
+              </div>
+            </div>
+            <div class="fields-block" id="block-2">
+              <div class="form-paragraph-row">
+                <p><b>2. </b> מספר נייר הערך בבורסה המזכה את המחזיק בו להשתתף באסיפה </p>
+                <div>
+                  <input class="reference-num" type="text" id="SecurityNumber" placeholder="" maxlength="8" style="width:185px">
+                  <div class="reference-num__label" id="SecurityNumberError"></div>
+                </div>
+                <input class="inp-cbx" id="cbx" type="checkbox" style="display: none" checked/>
+                <label class="cbx" for="cbx"><span>
+                <svg width="12px" height="10px" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </svg></span><span>בצע אימות למספר נייר הערך.</span></label>
+              </div>
+              <div class="form-row">
+                <p>שם בבורסה של נייר הערך המזכה:</p>
+                <input class="reference-num" type="text" id="SecurityName" placeholder="" maxlength="30" style="width:200px">
+              </div>
+              <div class="form-row" style="align-items: baseline;">
+                <p >שם המנפיק את הנייר המזכה: </p>
+                <div class="select-box" id="MeetingCompanyNameList" style="width:350px">
+                  <div class="select-box__current" id="MeetingCompanyNameListSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">ALVARION LTD.</li>
+                    <li class="select-box__list-item" data-value="2">BLUE SQUARE - ISRAEL LTD.</li>
+                    <li class="select-box__list-item" data-value="3">COMPUGEN LTD.</li>
+                    <li class="select-box__list-item" data-value="4">אחר</li>
+                  </ul>
+                </div>
+                <div id="MeetingCompanyName" placeholder=" " maxlength="1000" contenteditable="true" class="disabled" style="width: 300px;"></div>
+              </div>
+              <div class="form-row">
+                <p >סוג מספר זיהוי:</p>
+                <div class="select-box" id="MeetingCompanyIdType" style="width:350px">
+                  <div class="select-box__current" id="MeetingCompanyIdTypeSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">מספר ברשם החברות בישראל</li>
+                    <li class="select-box__list-item" data-value="2">מספר רשם החברות בחו"ל</li>
+                    <li class="select-box__list-item" data-value="3">מספר מזהה אחר</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-row">
+                <p>מספר זיהוי: </p>
+                <div>
+                  <input class="reference-num" type="text" id="ReportedOnEntityID" placeholder="" maxlength="12" style="width:185px">
+                </div>           
+              </div>
+              <div class="form-row">
+                <b><span class="clsRemark">הערה: יודגש כי הפרטים בסעיף זה משמשים להצגת הדיווח במסגרת הדיווחים של התאגיד שפרטיו צויינו לעיל.</span></b>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר:
+                  <br />
+                  (1) אם נדרשת אסיפה על יותר ממספר נייר אחד, יש לדווח א460 על כל נייר נוסף בנפרד. דיווחים שבהם יצוינו מספרי נייר נוספים, יחייבו שליחת דוח מתקן.
+                  <br />
+                  (2) אם סומן לבצע אימות למספר נייר הערך והמספר לא קיים במערכת בעת הבדיקה, הדיווח יכשל. 
+                </span>
+              </div>
+              <div class="form-row">
+                <p >סוג נייר:</p>
+                <div class="select-box disabled" id="SecurityType" style="width:200px">
+                  <div class="select-box__current" id="SecurityTypeSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">כתב אופציה</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="חיפוש..." />
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                  </ul>
+                </div>
+              </div>
+              <div  class="form-row">
+                <p>המועד הקובע לזכאות להשתתף ולהצביע באסיפה:</p>
+                <input class="date-field" type="date" id="MeetingEffectiveDate" name="datepicker">
+              </div>
+            </div>
+            <div class="fields-block" id="block-3">
+              <div class="form-paragraph-row">
+                <p><b>3. </b> על סדר היום: </p>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר: מיספור הנושאים שעל סדר היום יהיה בהתאם לסדר הופעתם בדוח זימון האסיפה אם מצורף כקובץ. </span>
+              </div>
+              <div class="form-row">
+                <p>נושאים/החלטות שיועלו באסיפה: </p>
+              </div>
+              <div class="form-tables">
+                <table dir="rtl" style="padding: 10px;">
+                  <thead>
+                  </thead>
+                  <tbody>
+                    <tr style="cursor: auto">
+                      <td style="border-left:1px solid #d8d8d8; width:5%"><b>1</b></td>
+                      <td style="border-left:1px solid #d8d8d8; width:45%">
+                        <p>הנושא / ההחלטה ופרטיו : </p>
+                        <div id="ItemSubject" placeholder=" " maxlength="1000" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                      </td>
+                      <td style="border-left:1px solid #d8d8d8; width:40%">
+                        <p>ההחלטה שעל סדר היום מובאת</p>
+                        <div class="select-box" id="IsItemForVoting" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current" id="IsItemForVotingSelected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">להצבעה</li>
+                            <li class="select-box__list-item" data-value="2">לדיווח בלבד</li>
+                          </ul>
+                        </div>
+                        <br /><br />
+                        <p>סוג הרוב הנדרש לאישור </p>
+                        <div class="select-box" id="MajorityRequired" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current" id="MajorityRequiredSelected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">רוב רגיל</li>
+                            <li class="select-box__list-item" data-value="2">אינו רוב רגיל</li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="width:10%">
+                        <div class="table-buttons-container">
+                          <button class="table-buttons" id="DeleteRow">x</button>
+                          <button class="table-buttons" id="AddRow">+</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="cursor: auto">
+                      <td style="border-left:1px solid #d8d8d8; width:5%"><b>2</b></td>
+                      <td style="border-left:1px solid #d8d8d8; width:45%">
+                        <p>הנושא / ההחלטה ופרטיו : </p>
+                        <div id="ItemSubject2" placeholder=" " maxlength="1000" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                      </td>
+                      <td style="border-left:1px solid #d8d8d8; width:40%">
+                        <p>ההחלטה שעל סדר היום מובאת</p>
+                        <div class="select-box" id="IsItemForVoting2" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current" id="IsItemForVoting2Selected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">להצבעה</li>
+                            <li class="select-box__list-item" data-value="2">לדיווח בלבד</li>
+                          </ul>
+                        </div>
+                        <br /><br />
+                        <p>סוג הרוב הנדרש לאישור </p>
+                        <div class="select-box" id="MajorityRequired2" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current" id="MajorityRequired2Selected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">רוב רגיל</li>
+                            <li class="select-box__list-item" data-value="2">אינו רוב רגיל</li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="width:10%">
+                        <div class="table-buttons-container">
+                          <button class="table-buttons" id="DeleteRow">x</button>
+                          <button class="table-buttons" id="AddRow">+</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="cursor: auto; border-bottom: none;">
+                      <td style="border-left:1px solid #d8d8d8; width:5%"><b>3</b></td>
+                      <td style="border-left:1px solid #d8d8d8; width:45%">
+                        <p>הנושא / ההחלטה ופרטיו : </p>
+                        <div id="ItemSubject3" placeholder=" " maxlength="1000" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                      </td>
+                      <td style="border-left:1px solid #d8d8d8; width:40%">
+                        <p>ההחלטה שעל סדר היום מובאת</p>
+                        <div class="select-box" id="IsItemForVoting3" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current" id="IsItemForVoting3Selected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">להצבעה</li>
+                            <li class="select-box__list-item" data-value="2">לדיווח בלבד</li>
+                          </ul>
+                        </div>
+                        <br /><br />
+                        <p>סוג הרוב הנדרש לאישור </p>
+                        <div class="select-box" id="MajorityRequired3" style="width:250px; margin-right:0px !important">
+                          <div class="select-box__current"  id="MajorityRequired3Selected" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                          <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                          <input class="select-box__search" type="search" placeholder="חיפוש..." style="display:none;">
+                          <ul class="select-box__list">
+                            <li class="select-box__list-item" data-value="-1">---</li>
+                            <li class="select-box__list-item" data-value="1">רוב רגיל</li>
+                            <li class="select-box__list-item" data-value="2">אינו רוב רגיל</li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="width:10%;">
+                        <div class="table-buttons-container">
+                          <button class="table-buttons" id="DeleteRow">x</button>
+                          <button class="table-buttons" id="AddRow">+</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="form-row" style="padding-top:30px">
+                <p>צרוף דוח זימון האסיפה:</p><br />
+                <label for="DetailedTopicsFile" class="drop-container" id="dropcontainer">
+                  <span class="drop-title">גרור קובץ לכאן</span>
+                  או
+                  <input type="file" id="DetailedTopicsFile" accept="image/*, .pdf, .text" value="">
+                </label>
+              </div>
+            </div>
+            <div class="fields-block" id="block-4">
+              <div class="form-paragraph-row">
+                <p ><b>4. </b> מצורף/ים </p>
+              </div>
+              <div class="form-row" style="padding-right:25px">
+                <div class="select-box" id="IncludesVotingFile" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesVotingFileSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">נוסח כתב הצבעה</p>
+              </div>
+              <div class="form-row" style="padding-right:25px">
+                <div class="select-box" id="IncludesPositionFile" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesPositionFileSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">הודעת עמדה</p>
+              </div>
+              <div class="form-row" style="padding-right:15px">
+                <label for="VotingFile" class="drop-container" id="dropcontainer">
+                  <span class="drop-title">גרור קובץ לכאן</span>
+                  או
+                  <input type="file" id="VotingFile" accept="image/*, .pdf, .text" value="">
+                </label>
+              </div>
+              <div class="form-row" style="padding-right:25px;padding-top:30px">
+                <div class="select-box" id="IncludesAppointmentDeclaration" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesAppointmentDeclarationSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">הצהרת מינוי נציג לנציגות </p>
+              </div>
+              <div class="form-row" style="padding-right:25px">
+                <div class="select-box" id="IncludesCorrectedDeedOfTrust" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesCorrectedDeedOfTrustSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">שטר נאמנות מתוקן</p>
+              </div>
+              <div class="form-row" style="padding-right:25px">
+                <div class="select-box" id="IncludesApprovalRequest" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesApprovalRequestSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">בקשה לאישור הסדר נושים לפי סעיף 350 </p>
+              </div>
+              <div class="form-row" style="padding-right:25px">
+                <div class="select-box" id="IncludesOtherFile" style="width:100px; margin-right:0px !important">
+                  <div class="select-box__current" id="IncludesOtherFileSelected" tabindex="1" data-value="-1">
+                    <span class="select-box__placeholder">---</span>
+                  </div>
+                  <img class="select-box__arrow" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" />
+                  <input class="select-box__search" type="search" placeholder="" style="display:none !important;">
+                  <ul class="select-box__list">
+                    <li class="select-box__list-item" data-value="-1">---</li>
+                    <li class="select-box__list-item" data-value="1">כן</li>
+                    <li class="select-box__list-item" data-value="2">לא</li>
+                  </ul>
+                </div>
+                <p style="padding-right: 10px;">אחר</p>
+                <div id="OtherFileDetails" placeholder=" " maxlength="100" contenteditable="true" class="disabled"></div>
+              </div>
+              <div class="form-row" style="padding-right:15px">
+                <label for="OtherFile" class="drop-container" id="dropcontainer">
+                  <span class="drop-title">גרור קובץ לכאן</span>
+                  או
+                  <input type="file" id="Field117File" accept="image/*, .pdf, .text" value="">
+                </label>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר: במידה וצורף כתב הצבעה ו/או הודעת עמדה יש לוודא כי הם ערוכים לפי תקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015. </span>
+              </div>
+              <div class="form-row">
+                <p>קישורית לאתר מערכת ההצבעות שבו ניתן להצביע:</p>
+                <a class="std-link" href="https://votes.isa.gov.il/" target="_blank">מערכת ההצבעות</a>
+              </div>
+              <div class="form-row">
+                <span class="clsRemark">הסבר: זכאים הרשאים להצביע במערכת יקבלו את פרטי הגישה למערכת מחברי הבורסה. </span>
+              </div>
+            </div>
+            <div class="fields-block" id="block-5">
+              <div class="form-paragraph-row">
+                <p ><b>5. </b>המניין החוקי לקיום האסיפה:</p>
+              </div>
+              <div class="form-row">
+                <div id="ValidQuorumCondition" placeholder=" " maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;margin-top:-15px"></div>
+              </div>
+              <div class="form-paragraph-row" style="padding-top: 40px;">
+                <p ><b>6.</b></p>
+                <div class="radioBtn">
+                  <label><input type="radio" name="e" id="RB_MeetingHeldOn" onchange="handleRadioButtonChange()"> בהעדר מניין חוקי, האסיפה הנדחית תתקיים בתאריך </label>
+                </div>
+                <input class="date-field disabled" type="date" id="QuorumPostponedMeetingDate" name="datepicker">
+                <p>, בשעה </p>
+                <input class="date-field disabled" id="QuorumPostponedMeetingTime" type="time" name="appt-time" value="--:--" />
+              </div>
+              <div class="form-row" style="padding-right:35px;margin-top:-12px">
+                <p>בכתובת</p>
+                <div id="QuorumPostponedMeetingAddress" placeholder=" " maxlength="1000" contenteditable="true" class="disabled" style="width:656px"></div>
+              </div>
+              <div class="form-row">
+                <div class="radioBtn" style="padding-right: 23px;margin-top:-12px">
+                  <label><input type="radio" name="e" id="RB_MeetingCancel" onchange="handleRadioButtonChange()"> בהעדר מניין חוקי האסיפה לא תתקיים.</label>
+                </div>
+              </div>
+              <div class="form-paragraph-row" style="padding-top: 40px;">
+                <p ><b>7. </b> המקום והזמנים שבהם ניתן לעיין בכל הצעת החלטה שנוסחה לא הובא במלואו בפרוט סדר היום לעיל</p>
+              </div>
+              <div class="form-row">
+                <div id="MeetingExtraInformation" placeholder=" " maxlength="200" contenteditable="true" style="width:550px;margin-right:25px;margin-top:-15px"></div>
+              </div>
+              <div class="form-row">
+                <p >מזהה אסיפה: </p>
+                <input class="reference-num" type="text" id="UniqueMeetingProofId" placeholder="xxxx-xx-xxxxxx" maxlength="14">
+                <div class="reference-num__label" id="UniqueMeetingProofIdError"></div>
+              </div>
+              <div class="phSpace"></div>
+              <div class="form-row">
+                <div id="TextHofshi" placeholder="" maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;"></div>
+              </div>
+              <div class="form-row">
+                <p>מספרי אסמכתאות של מסמכים קודמים בנושא (אין האזכור מהווה הכללה על דרך הפניה): </p>
+              </div>
+              <div class="form-row" style="padding-right:15px;margin-top:-15px">
+                <input class="reference-num" type="text" id="FooterProofNum1" placeholder="xxxx-xx-xxxxxx" maxlength="14">
+                <input class="reference-num" type="text" id="FooterProofNum2" placeholder="xxxx-xx-xxxxxx" maxlength="14">
+                <input class="reference-num" type="text" id="FooterProofNum3" placeholder="xxxx-xx-xxxxxx" maxlength="14">  
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--PreviewPart-->
+      <div id="PreviewM" class="previewModal">
+        <div class="preview-modal-content">
+          <span class="close-preview">&times;</span>
+          <div id="previewContent">
+            <div class="form-fields-preview">
+              <div class="form-side-header-preview">
+                <div class="CompanyDetailsArea">
+                  <div class="CompanyHebName">איילון חברה לביטוח בע"מ</div>
+                  <div class="CompanyEngName-Preview">Ayalon Insurance Ltd.</div>
+                  <div class="CompanyID">(מספר ברשם: 654865432)</div>
+                  <div class="AssigneeName">
+                    <span style="font-weight: 600;">דווח ע"י: </span>ישראל ישראל, מזכיר
+                  </div>
+                </div>
+                <div class="FormNum-Preview">
+                  <div class="FormID">א460</div>
+                  <div class="FormType">(פומבי)</div>
+                </div>
+                <div class="FormName-Preview">דוח מיידי על אסיפה</div>
+                <div class="Regulations-Preview">תקנה 8 לתקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015 </div>
+                <nav class="ProgressTab-Preview">
+                  <ul>
+                    <li class=""><span class="progress-num">1</span><a href="#block-1-preview">פרטי אסיפה</a></li>
+                    <li class=""><span class="progress-num">2</span><a href="#block-2-preview">פרטי נייר</a></li>
+                    <li class=""><span class="progress-num">3</span><a href="#block-3-preview">על סדר היום</a></li>
+                    <li class=""><span class="progress-num">4</span><a href="#block-4-preview">קבצים מצורפים</a></li>
+                    <li class=""><span class="progress-num">5</span><a href="#block-5-preview">מניין ומיקום</a></li>
+                  </ul>
+                  <div class="progress-line"></div> <!-- Added line -->
+                </nav> 
+                <div class="AddInfoArea-preview">
+                  <div class="card-preview">
+                      <div class="front">
+                        <div class="flip-box-content-front-preview">
+                          <span style="font-weight: 600;font-size: 16px;">פרטי החברה</span>
+                            <ul class="">
+                              <li >
+                                <i class='bx bx-buildings' ></i>
+                                <span>אבא הילל סילבר 12, רמת גן</span>
+                              </li>
+                              <li>
+                                <i class='bx bx-phone-call'></i>
+                                <span>077-7777777, 03-5540324</span>
+                              </li>
+                              <li>
+                                <i class='bx bx-envelope' ></i>
+                                <span>contact@ayalon-ins.co.il</span>
+                              </li>
+                              <li>
+                                <i class='bx bx-laptop' ></i>
+                                <a href="https://www.ayalon-ins.co.il/" target=”_blank”>www.ayalon-ins.co.il</a>
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                      <div class="back">
+                        <div class="flip-box-content-back-preview">
+                          <span style="font-weight: 600;font-size: 16px;">פרטי חותם</span>
+                          <ul class="">
+                            <li >
+                              <i class='bx bx-buildings' ></i>
+                              <span>אבא הילל סילבר 12, רמת גן</span>
+                            </li>
+                            <li>
+                              <i class='bx bx-phone-call'></i>
+                              <span>077-7777777, 03-5542361</span>
+                            </li>
+                            <li>
+                              <i class='bx bx-envelope' ></i>
+                              <span>israel-i@ayalon-ins.co.il</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-preview">
+                <div class="form-fields-preview">
+                  <form>
+                    <div class="fields-block-preview" id="block-1-preview">
+                      <div class="form-row-preview">
+                        <p>האם קיימת אפשרות להצבעה באמצעות מערכת ההצבעה האלקטרונית?</p>
+                        <div id="isVotingSupported" class="dropdown-toggle disabled-preview" style="margin-right: 10px;">
+                          <input type="radio" name="sizeBy" value="weight" id="sizeWeightPreview" style="display: none;"/>
+                          <label for="sizeWeightPreview" id="toggle-label-yes">כן</label>
+                          <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensionsPreview" style="display: none;"/>
+                          <label for="sizeDimensionsPreview" id="toggle-label-no">לא</label>
+                        </div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>הנאמן מודיע על: </p>
+                        <div class="select-box-preview disabled-preview" style="width:350px;pointer-events: none;">
+                          <div class="select-box__current-preview" id="MeetingReportTypePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>מספר האסמכתא של ההודעה האחרונה על האסיפה הוא </p>
+                        <div >
+                        <input class="reference-num disabled-preview" type="text" id="ReferenceNumPreview" placeholder="---" maxlength="14">
+                        <div class="reference-num__label" id="ReferenceNumErrorPreview"></div>
+                        </div>
+                        <p>, שזומנה לתאריך</p>
+                        <input class="date-field-preview disabled-preview" type="date" id="ReferenceMeetingDatePreview" name="datepicker">
+                      </div>
+                      <div class="form-row-preview" style="align-items: baseline;">
+                        <p >סיבת דחייה או ביטול : </p>
+                        <div class="select-box-preview disabled-preview" style="width:250px">
+                          <div class="select-box__current-preview" id="RejectionReasonPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <div id="ReferenceMeetingReasonPreview" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="false" ></div>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר: יש להתייחס למספר אסמכתא של ההודעה האחרונה של כינוס או דחיית האסיפה.</span>
+                      </div>
+                      <br />
+                      <br />
+                      <div class="form-paragraph-row-preview">
+                        <p><b>1. </b> בתאריך:</p>
+                        <input class="date-field-preview disabled-preview" type="date" id="ConveningDecisionDatePreview" name="datepicker">
+                      </div>
+                      <div class="form-row-preview">
+                        <p>הוחלט על</p>
+                        <div class="select-box-preview disabled-preview" style="width:350px" >
+                          <div class="select-box__current-preview" id="SummonsOrRejectPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <div class="select-box-preview disabled-preview"  style="width:250px" >
+                          <div class="select-box__current-preview" id="MeetingTypePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>שתתקיים ביום</p>
+                        <div class="select-box-preview disabled-preview" style="width:100px" >
+                          <div class="select-box__current-preview" id="MeetingDayPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p>בתאריך: </p>
+                        <input class="date-field-preview disabled-preview" type="date" id="MeetingDatePreview" name="datepicker">
+                        <p>בשעה: </p>
+                        <input class="date-field-preview disabled-preview" id="MeetingTimePreview" type="time" name="appt-time" value="--:--" pattern="[0-9]{2}:[0-9]{2}"/>
+                      </div>
+                      <div class="form-row-preview" style="align-items: baseline;">
+                        <p>בכתובת:</p>
+                        <div id="MeetingAddressPreview" class="disabled-preview" placeholder="---" maxlength="100" contenteditable="true" ></div>
+                      </div>
+                      <div class="form-row-preview" style="align-items: baseline;">
+                        <p >הסיבות להקדמת מועד הכינוס לפי סעיף 35יב1 לחוק:</p>
+                        <div id="ReasonsForEarlierDateOfConveningPreview" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width: 500px"></div>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר: מועד כינוס האסיפה לא יהיה מוקדם משבעה ימים ולא מאוחר מ-21 ימים ממועד הזימון; ואולם הנאמן רשאי להקדים את כינוס האסיפה, ליום אחד לפחות לאחר מועד הזימון, אם סבר כי הדבר דרוש לשם הגנה על זכויות המחזיקים בכפוף להוראות סעיף 35יב24; עשה כן, ינמק הנאמן את הסיבות להקדמת מועד הגיוס. </span>
+                      </div>
+                    </div>
+                    <div class="fields-block-preview" id="block-2-preview">
+                      <div class="form-paragraph-row-preview">
+                        <p><b>2. </b> מספר נייר הערך בבורסה המזכה את המחזיק בו להשתתף באסיפה </p>
+                        <div>
+                          <input class="reference-num disabled-preview" type="text" id="SecurityNumberPreview" placeholder="---" maxlength="8" style="width:185px">
+                          <div class="reference-num__label" id="SecurityNumberError"></div>
+                        </div>
+                        <input class="inp-cbx-preview" id="cbx-preview" type="checkbox" style="display: none; pointer-events: none;"/>
+                        <label class="cbx" for="cbx" id="CBPreview" style="pointer-events: none;"><span style="pointer-events: none;">
+                        <svg width="12px" height="10px" viewbox="0 0 12 10">
+                          <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                        </svg></span><span style="pointer-events: none;">בצע אימות למספר נייר הערך.</span></label>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>שם בבורסה של נייר הערך המזכה:</p>
+                        <input class="reference-num disabled-preview" type="text" id="SecurityNamePreview" placeholder="---" maxlength="30" style="width:200px">
+                      </div>
+                      <div class="form-row-preview" style="align-items: baseline;">
+                        <p >שם המנפיק את הנייר המזכה: </p>
+                        <input id="MeetingCompanyNamePreview" placeholder="---" maxlength="100"  class="reference-num disabled-preview" style="width: 300px;"></input>
+                      </div>
+                      <div class="form-row-preview">
+                        <p >סוג מספר זיהוי:</p>
+                        <div class="select-box-preview  disabled-preview" style="width:350px">
+                          <div class="select-box__current-preview" id="MeetingCompanyIdTypePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>מספר זיהוי: </p>
+                        <div>
+                          <input class="reference-num disabled-preview" type="text" id="ReportedOnEntityIDPreview" placeholder="---" maxlength="12" style="width:185px">
+                        </div>           
+                      </div>
+                      <div class="form-row-preview">
+                        <b><span class="clsRemark">הערה: יודגש כי הפרטים בסעיף זה משמשים להצגת הדיווח במסגרת הדיווחים של התאגיד שפרטיו צויינו לעיל.</span></b>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר:
+                          <br />
+                          (1) אם נדרשת אסיפה על יותר ממספר נייר אחד, יש לדווח א460 על כל נייר נוסף בנפרד. דיווחים שבהם יצוינו מספרי נייר נוספים, יחייבו שליחת דוח מתקן.
+                          <br />
+                          (2) אם סומן לבצע אימות למספר נייר הערך והמספר לא קיים במערכת בעת הבדיקה, הדיווח יכשל. 
+                        </span>
+                      </div>
+                      <div class="form-row-preview">
+                        <p >סוג נייר:</p>
+                        <div class="select-box-preview disabled-preview" style="width:200px">
+                          <div class="select-box__current-preview " id="SecurityTypePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">כתב אופציה</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div  class="form-row-preview">
+                        <p>המועד הקובע לזכאות להשתתף ולהצביע באסיפה:</p>
+                        <input class="date-field-preview disabled-preview" type="date" id="MeetingEffectiveDatePreview" name="datepicker">
+                      </div>
+                    </div>
+                    <div class="fields-block-preview" id="block-3-preview">
+                      <div class="form-paragraph-row-preview">
+                        <p><b>3. </b> על סדר היום: </p>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר: מיספור הנושאים שעל סדר היום יהיה בהתאם לסדר הופעתם בדוח זימון האסיפה אם מצורף כקובץ. </span>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>נושאים/החלטות שיועלו באסיפה: </p>
+                      </div>
+                      <div class="form-tables">
+                        <table dir="rtl" style="padding: 10px;">
+                          <thead>
+                          </thead>
+                          <tbody>
+                            <tr style="cursor: auto; pointer-events: none;">
+                              <td style="border-left:1px solid #d8d8d8; width:5%"><b>1</b></td>
+                              <td style="border-left:1px solid #d8d8d8; width:45%">
+                                <p>הנושא / ההחלטה ופרטיו : </p>
+                                <div id="ItemSubjectPreview" placeholder="---" maxlength="1000" class="disabled-preview" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                              </td>
+                              <td style="border-left:1px solid #d8d8d8; width:40%">
+                                <p>ההחלטה שעל סדר היום מובאת</p>
+                                <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="IsItemForVotingPreview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <p>סוג הרוב הנדרש לאישור </p>
+                                <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="MajorityRequiredPreview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr style="cursor: auto; pointer-events: none;">
+                              <td style="border-left:1px solid #d8d8d8; width:5%"><b>2</b></td>
+                              <td style="border-left:1px solid #d8d8d8; width:45%">
+                                <p>הנושא / ההחלטה ופרטיו : </p>
+                                <div id="ItemSubject2Preview" placeholder="---" class="disabled-preview" maxlength="1000" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                              </td>
+                              <td style="border-left:1px solid #d8d8d8; width:40%">
+                                <p>ההחלטה שעל סדר היום מובאת</p>
+                                <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="IsItemForVoting2Preview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <p>סוג הרוב הנדרש לאישור </p>
+                                <div class="select-box-preview disabled-preview" class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="MajorityRequired2Preview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr style="cursor: auto; border-bottom: none; pointer-events: none;">
+                              <td style="border-left:1px solid #d8d8d8; width:5%"><b>3</b></td>
+                              <td style="border-left:1px solid #d8d8d8; width:45%">
+                                <p>הנושא / ההחלטה ופרטיו : </p>
+                                <div id="ItemSubject3Preview" placeholder="---" class="disabled-preview" maxlength="1000" contenteditable="true" style="width: 500px; margin-right:0px !important"></div>
+                              </td>
+                              <td style="border-left:1px solid #d8d8d8; width:40%">
+                                <p>ההחלטה שעל סדר היום מובאת</p>
+                                <div class="select-box-preview disabled-preview"  style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="IsItemForVoting3Preview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <p>סוג הרוב הנדרש לאישור </p>
+                                <div class="select-box-preview disabled-preview"  style="width:250px; margin-right:0px !important">
+                                  <div class="select-box__current-preview" id="MajorityRequired3Preview" tabindex="1" data-value="-1">
+                                    <span class="select-box__placeholder">---</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="form-row-preview" style="padding-top:30px">
+                        <p>צרוף דוח זימון האסיפה:</p><br />
+                        <div class="filePreview">
+                          <span id="DetailedTopicsFilePreview" class="fileNamePreview"></span>
+                          <i id="file1" class='bx bx-paperclip fileIconPreview'></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fields-block-preview" id="block-4-preview">
+                      <div class="form-paragraph-row-preview">
+                        <p ><b>4. </b> מצורף/ים </p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesVotingFilePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">נוסח כתב הצבעה</p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesPositionFilePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">הודעת עמדה</p>
+                      </div>
+                      <div class="form-row-preview" style="padding-top:30px">
+                        <div class="filePreview">
+                          <span id="VotingFilePreview" class="fileNamePreview"></span>
+                          <i id="file2" class='bx bx-paperclip fileIconPreview'></i>
+                        </div>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px;padding-top:30px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesAppointmentDeclarationPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">הצהרת מינוי נציג לנציגות </p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesCorrectedDeedOfTrustPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">שטר נאמנות מתוקן</p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesApprovalRequestPreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">בקשה לאישור הסדר נושים לפי סעיף 350 </p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:25px">
+                        <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+                          <div class="select-box__current-preview" id="IncludesOtherFilePreview" tabindex="1" data-value="-1">
+                            <span class="select-box__placeholder">---</span>
+                          </div>
+                        </div>
+                        <p style="padding-right: 10px;">אחר</p>
+                        <div id="OtherFileDetailsPreview" placeholder="---" maxlength="100" contenteditable="true" class="disabled-preview"
+                        ></div>
+                      </div>
+                      <div class="form-row-preview" style="padding-top:30px">
+                        <div class="filePreview">
+                          <span id="Field117FilePreview" class="fileNamePreview"></span>
+                          <i id="file3" class='bx bx-paperclip fileIconPreview'></i>
+                        </div>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר: במידה וצורף כתב הצבעה ו/או הודעת עמדה יש לוודא כי הם ערוכים לפי תקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015. </span>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>קישורית לאתר מערכת ההצבעות שבו ניתן להצביע:</p>
+                        <a class="std-link" href="https://votes.isa.gov.il/" target="_blank">מערכת ההצבעות</a>
+                      </div>
+                      <div class="form-row-preview">
+                        <span class="clsRemark">הסבר: זכאים הרשאים להצביע במערכת יקבלו את פרטי הגישה למערכת מחברי הבורסה. </span>
+                      </div>
+                    </div>
+                    <div class="fields-block-preview" id="block-5-preview">
+                      <div class="form-paragraph-row-preview">
+                        <p ><b>5. </b>המניין החוקי לקיום האסיפה:</p>
+                      </div>
+                      <div class="form-row-preview">
+                        <div id="ValidQuorumConditionPreview" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;margin-top:-15px"></div>
+                      </div>
+                      <div class="form-paragraph-row-preview" style="padding-top: 40px;">
+                        <p ><b>6.</b></p>
+                        <div class="radioBtn" style="pointer-events: none;">
+                          <label><input type="radio" name="e" id="RB_MeetingHeldOnPreview" style="pointer-events: none;"> בהעדר מניין חוקי, האסיפה הנדחית תתקיים בתאריך </label>
+                        </div>
+                        <input class="date-field-preview disabled-preview" type="date" id="QuorumPostponedMeetingDatePreview" name="datepicker">
+                        <p>, בשעה </p>
+                        <input class="date-field-preview disabled-preview" id="QuorumPostponedMeetingTimePreview" type="time" name="appt-time" value="--:--" />
+                      </div>
+                      <div class="form-row-preview" style="padding-right:35px;margin-top:-12px">
+                        <p>בכתובת</p>
+                        <div id="QuorumPostponedMeetingAddressPreview" placeholder="---" maxlength="1000" contenteditable="true" class="disabled-preview" style="width:656px"></div>
+                      </div>
+                      <div class="form-row-preview">
+                        <div class="radioBtn" style="padding-right: 23px;margin-top:-12px;pointer-events: none;">
+                          <label><input type="radio" name="e" id="RB_MeetingCancelPreview" style="pointer-events: none;"> בהעדר מניין חוקי האסיפה לא תתקיים.</label>
+                        </div>
+                      </div>
+
+                      <div class="form-paragraph-row-preview" style="padding-top: 40px;">
+                        <p ><b>7. </b> המקום והזמנים שבהם ניתן לעיין בכל הצעת החלטה שנוסחה לא הובא במלואו בפרוט סדר היום לעיל</p>
+                      </div>
+                      <div class="form-row-preview">
+                        <div id="MeetingExtraInformationPreview" class="disabled-preview" placeholder="---" maxlength="200" contenteditable="true" style="width:550px;margin-right:25px;margin-top:-15px"></div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p >מזהה אסיפה: </p>
+                        <input class="reference-num disabled-preview" type="text" id="UniqueMeetingProofIdPreview" placeholder="---" maxlength="14">
+                        <div class="reference-num__label" id="UniqueMeetingProofIdError"></div>
+                      </div>
+                      <div class="phSpace"></div>
+                      <div class="form-row-preview">
+                        <div id="TextHofshiPreview" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;"></div>
+                      </div>
+                      <div class="form-row-preview">
+                        <p>מספרי אסמכתאות של מסמכים קודמים בנושא (אין האזכור מהווה הכללה על דרך הפניה): </p>
+                      </div>
+                      <div class="form-row-preview" style="padding-right:15px;margin-top:-15px">
+                        <input class="reference-num disabled-preview" type="text" id="FooterProofNum1Preview" placeholder="---" maxlength="14">
+                        <input class="reference-num disabled-preview" type="text" id="FooterProofNum2Preview" placeholder="---" maxlength="14">
+                        <input class="reference-num disabled-preview" type="text" id="FooterProofNum3Preview" placeholder="---" maxlength="14">  
+                      </div>
+                    </div>
+                  </form>  
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
+    
+    <section id="form999" style="display:none">
+      <div class="form-side-header">
+        <div class="CompanyName"></div>
+        <div class="CompanyID"></div>
+        <div class="AssigneeName"></div>
+        <div class="FormName">טופס בדיקה</div>
+        <div class="FormID">א999</div>
+        <div>לא פומבי</div>
+        <div class="ProgressTab">
+
+        </div>
+        <div class="addInfo">
+          <div class="CompanyDetails"></div>
+          <div class="CompanyPrevNames"></div>
+          <div class="SignatoryDetails"></div>
+        </div>
+      </div>
+      <div class="form">
+        <ul class="nav-links-2">
+          <li >
+            <a href="#">
+              <i class='bx bx-cloud-upload'></i>
+              <span>טעינה</span>
+            </a>
+          </li>
+          <li >
+            <a href="#">
+              <i class='bx bx-edit-alt'></i>
+              <span>דוח מתקן</span>
+            </a>
+          </li>
+          <li >
+            <a href="#">
+              <i class='bx bx-folder-plus'></i>
+              <span>דוח משלים</span>
+            </a>
+          </li>
+          <li >
+            <a href="#">
+              <i class='bx bx-code-alt'></i>
+              <span>בדיקה</span>
+            </a>
+          </li>
+          <li >
+            <a href="#">
+              <i class='bx bx-save'></i>
+              <span>שמירה</span>
+            </a>
+          </li>
+          <li >
+            <a href="#">
+              <i class='bx bx-printer' ></i>
+              <span>הדפסה</span>
+            </a>
+          </li>
+          <li >
+              <a href="#">
+                <i class='bx bx-show-alt'></i>
+                <span>הצגה</span>
+              </a>
+          </li>
+          <li >
+              <a href="#">
+                <i class='bx bx-paper-plane' ></i>
+                <span>שליחה</span>
+              </a>
+          </li>
+        </ul>
+        <div class="form-fields">
+          טופס א999
+        </div>
+      </div>
+
+    </section>
+    <section class="" id="upload">
+        upload page content
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="printPage" style="display: none;">
+    <!-- <div class="form-side-header-preview" >
+      <div class="CompanyDetailsArea">
+        <div class="CompanyHebName">איילון חברה לביטוח בע"מ</div>
+        <div class="CompanyEngName-Preview">Ayalon Insurance Ltd.</div>
+        <div class="CompanyID">(מספר ברשם: 654865432)</div>
+        <div class="AssigneeName">
+          <span style="font-weight: 600;">דווח ע"י: </span>ישראל ישראל, מזכיר
+        </div>
+      </div>
+      <div class="FormNum-Preview">
+        <div class="FormID">א460</div>
+        <div class="FormType">פומבי</div>
+      </div>
+      <div class="FormName-Preview">דוח מיידי על אסיפה</div>
+      <div class="Regulations-Preview">תקנה 8 לתקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015 </div>
+      <nav class="ProgressTab-Preview">
+        <ul>
+          <li class=""><span class="progress-num">1</span><a href="#block-1-print">פרטי אסיפה</a></li>
+          <li class=""><span class="progress-num">2</span><a href="#block-2-print">פרטי נייר</a></li>
+          <li class=""><span class="progress-num">3</span><a href="#block-3-print">על סדר היום</a></li>
+          <li class=""><span class="progress-num">4</span><a href="#block-4-print">קבצים מצורפים</a></li>
+          <li class=""><span class="progress-num">5</span><a href="#block-5-print">מניין ומיקום</a></li>
+        </ul>
+        <div class="progress-line"></div>
+      </nav> 
+      <div class="AddInfoArea-preview">
+        <div class="card-preview">
+            <div class="front">
+              <div class="flip-box-content-front-preview">
+                <span style="font-weight: 600;font-size: 16px;">פרטי החברה</span>
+                  <ul class="">
+                    <li >
+                      <i class='bx bx-buildings' ></i>
+                      <span>אבא הילל סילבר 12, רמת גן</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-phone-call'></i>
+                      <span>077-7777777, 03-5540324</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-envelope' ></i>
+                      <span>contact@ayalon-ins.co.il</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-laptop' ></i>
+                      <a href="https://www.ayalon-ins.co.il/" target=”_blank”>www.ayalon-ins.co.il</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <div class="back">
+              <div class="flip-box-content-back-preview">
+                <span style="font-weight: 600;font-size: 16px;">פרטי חותם</span>
+                <ul class="">
+                  <li >
+                    <i class='bx bx-buildings' ></i>
+                    <span>אבא הילל סילבר 12, רמת גן</span>
+                  </li>
+                  <li>
+                    <i class='bx bx-phone-call'></i>
+                    <span>077-7777777, 03-5542361</span>
+                  </li>
+                  <li>
+                    <i class='bx bx-envelope' ></i>
+                    <span>israel-i@ayalon-ins.co.il</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="printFormHeader">
+      <div class="CompanyDetailsAreaPrint">
+        <div class="CompanyHebNamePrint">איילון חברה לביטוח בע"מ</div>
+        <div class="CompanyEngNamePrint">Ayalon Insurance Ltd.</div>
+        <div class="CompanyID">(מספר ברשם: 654865432)</div>
+      </div>
+      <div class="FormNum-Print">
+        <div class="FormIDPrint">א460</div>
+        <div class="FormType">(פומבי)</div>
+      </div>
+      <div class="FormNamePrint">דוח מיידי על אסיפה</div>
+      <div class="RegulationsPrint">תקנה 8 לתקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015 </div>
+    </div>
+    <div class="form-print">
+      <div class="form-fields-preview">
+      <form>
+          <div class="fields-block-preview" id="block-1-print">
+          <div class="form-row-preview">
+              <p>האם קיימת אפשרות להצבעה באמצעות מערכת ההצבעה האלקטרונית?</p>
+              <div id="isVotingSupportedPrint" class="dropdown-toggle disabled-preview" style="margin-right: 10px;">
+              <input type="radio" name="sizeBy" value="weight" id="sizeWeightPrint" style="display: none;"/>
+              <label for="sizeWeightPrint" id="toggle-label-yes">כן</label>
+              <input type="radio" name="sizeBy" value="dimensions" id="sizeDimensionsPrint" style="display: none;"/>
+              <label for="sizeDimensionsPrint" id="toggle-label-no">לא</label>
+              </div>
+          </div>
+          <div class="form-row-preview">
+              <p>הנאמן מודיע על: </p>
+              <div class="select-box-preview disabled-preview" style="width:350px;pointer-events: none;">
+              <div class="select-box__current-preview" id="MeetingReportTypePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+          </div>
+          <div class="form-row-preview">
+              <p>מספר האסמכתא של ההודעה האחרונה על האסיפה הוא </p>
+              <div >
+              <input class="reference-num disabled-preview" type="text" id="ReferenceNumPrint" placeholder="---" maxlength="14">
+              <div class="reference-num__label" id="ReferenceNumErrorPrint"></div>
+              </div>
+              <p>,</p>
+          </div>
+          <div class="form-row-preview">
+            <p>שזומנה לתאריך</p>
+              <input class="date-field-preview disabled-preview" type="date" id="ReferenceMeetingDatePrint" name="datepicker">
+          </div>
+          <div class="form-row-preview" style="align-items: baseline;">
+              <p >סיבת דחייה או ביטול : </p>
+              <div class="select-box-preview disabled-preview" style="width:250px">
+              <div class="select-box__current-preview" id="RejectionReasonPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <div id="ReferenceMeetingReasonPrint" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="false" ></div>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר: יש להתייחס למספר אסמכתא של ההודעה האחרונה של כינוס או דחיית האסיפה.</span>
+          </div>
+          <br />
+          <br />
+          <div class="form-paragraph-row-preview">
+              <p><b>1. </b> בתאריך:</p>
+              <input class="date-field-preview disabled-preview" type="date" id="ConveningDecisionDatePrint" name="datepicker">
+          </div>
+          <div class="form-row-preview">
+              <p>הוחלט על</p>
+              <div class="select-box-preview disabled-preview" style="width:350px" >
+              <div class="select-box__current-preview" id="SummonsOrRejectPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <div class="select-box-preview disabled-preview"  style="width:250px" >
+              <div class="select-box__current-preview" id="MeetingTypePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+          </div>
+          <div class="form-row-preview">
+              <p>שתתקיים ביום</p>
+              <div class="select-box-preview disabled-preview" style="width:100px" >
+              <div class="select-box__current-preview" id="MeetingDayPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p>בתאריך: </p>
+              <input class="date-field-preview disabled-preview" type="date" id="MeetingDatePrint" name="datepicker">
+              <p>בשעה: </p>
+              <input class="date-field-preview disabled-preview" id="MeetingTimePrint" type="time" name="appt-time" value="--:--" pattern="[0-9]{2}:[0-9]{2}"/>
+          </div>
+          <div class="form-row-preview" style="align-items: baseline;">
+              <p>בכתובת:</p>
+              <div id="MeetingAddressPrint" class="disabled-preview" placeholder="---" maxlength="100" contenteditable="true" ></div>
+          </div>
+          <div class="form-row-preview" style="align-items: baseline;">
+              <p >הסיבות להקדמת מועד הכינוס לפי סעיף 35יב1 לחוק:</p>
+              <div id="ReasonsForEarlierDateOfConveningPrint" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width: 500px"></div>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר: מועד כינוס האסיפה לא יהיה מוקדם משבעה ימים ולא מאוחר מ-21 ימים ממועד הזימון; ואולם הנאמן רשאי להקדים את כינוס האסיפה, ליום אחד לפחות לאחר מועד הזימון, אם סבר כי הדבר דרוש לשם הגנה על זכויות המחזיקים בכפוף להוראות סעיף 35יב24; עשה כן, ינמק הנאמן את הסיבות להקדמת מועד הגיוס. </span>
+          </div>
+          </div>
+          <div class="fields-block-preview" id="block-2-print">
+          <div class="form-paragraph-row-preview">
+              <p><b>2. </b> מספר נייר הערך בבורסה המזכה את המחזיק בו להשתתף באסיפה </p>
+              <div>
+              <input class="reference-num disabled-preview" type="text" id="SecurityNumberPrint" placeholder="---" maxlength="8" style="width:185px">
+              <div class="reference-num__label" id="SecurityNumberError"></div>
+              </div>
+          </div>
+          <div class="form-row-preview">
+            <input class="inp-cbx-preview" id="cbx-Print" type="checkbox" style="display: none; pointer-events: none;"/>
+              <label class="cbx" for="cbx" id="CBPrint" style="pointer-events: none;"><span style="pointer-events: none;">
+              <svg width="12px" height="10px" viewbox="0 0 12 10">
+              <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg></span><span style="pointer-events: none;">בצע אימות למספר נייר הערך.</span></label>
+          </div>
+          <div class="form-row-preview">
+              <p>שם בבורסה של נייר הערך המזכה:</p>
+              <input class="reference-num disabled-preview" type="text" id="SecurityNamePrint" placeholder="---" maxlength="30" style="width:200px">
+          </div>
+          <div class="form-row-preview" style="align-items: baseline;">
+              <p >שם המנפיק את הנייר המזכה: </p>
+              <input id="MeetingCompanyNamePrint" placeholder="---" maxlength="100"  class="reference-num disabled-preview" style="width: 300px;"></input>
+          </div>
+          <div class="form-row-preview">
+              <p >סוג מספר זיהוי:</p>
+              <div class="select-box-preview  disabled-preview" style="width:350px">
+              <div class="select-box__current-preview" id="MeetingCompanyIdTypePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+          </div>
+          <div class="form-row-preview">
+              <p>מספר זיהוי: </p>
+              <div>
+              <input class="reference-num disabled-preview" type="text" id="ReportedOnEntityIDPrint" placeholder="---" maxlength="12" style="width:185px">
+              </div>           
+          </div>
+          <div class="form-row-preview">
+              <b><span class="clsRemark">הערה: יודגש כי הפרטים בסעיף זה משמשים להצגת הדיווח במסגרת הדיווחים של התאגיד שפרטיו צויינו לעיל.</span></b>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר:
+              <br />
+              (1) אם נדרשת אסיפה על יותר ממספר נייר אחד, יש לדווח א460 על כל נייר נוסף בנפרד. דיווחים שבהם יצוינו מספרי נייר נוספים, יחייבו שליחת דוח מתקן.
+              <br />
+              (2) אם סומן לבצע אימות למספר נייר הערך והמספר לא קיים במערכת בעת הבדיקה, הדיווח יכשל. 
+              </span>
+          </div>
+          <div class="form-row-preview">
+              <p >סוג נייר:</p>
+              <div class="select-box-preview disabled-preview" style="width:200px">
+              <div class="select-box__current-preview " id="SecurityTypePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">כתב אופציה</span>
+              </div>
+              </div>
+          </div>
+          <div  class="form-row-preview">
+              <p>המועד הקובע לזכאות להשתתף ולהצביע באסיפה:</p>
+              <input class="date-field-preview disabled-preview" type="date" id="MeetingEffectiveDatePrint" name="datepicker">
+          </div>
+          </div>
+          <div class="fields-block-preview" id="block-3-print">
+          <div class="form-paragraph-row-preview">
+              <p><b>3. </b> על סדר היום: </p>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר: מיספור הנושאים שעל סדר היום יהיה בהתאם לסדר הופעתם בדוח זימון האסיפה אם מצורף כקובץ. </span>
+          </div>
+          <div class="form-row-preview">
+              <p>נושאים/החלטות שיועלו באסיפה: </p>
+          </div>
+          <div class="form-tables">
+              <table dir="rtl" style="padding: 10px;">
+              <thead>
+              </thead>
+              <tbody>
+                  <tr style="cursor: auto; pointer-events: none;">
+                  <td class="Col1"><b>1</b></td>
+                  <td class="Col2">
+                      <p>הנושא / ההחלטה ופרטיו : </p>
+                      <div id="ItemSubjectPrint" placeholder="---" maxlength="1000" class="tblTextArea disabled-preview" contenteditable="true"></div>
+                  </td>
+                  <td class="Col3">
+                      <p>ההחלטה שעל סדר היום מובאת</p>
+                      <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="IsItemForVotingPrint" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                      <br /><br />
+                      <p>סוג הרוב הנדרש לאישור </p>
+                      <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="MajorityRequiredPrint" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                  </td>
+                  </tr>
+                  <tr style="cursor: auto; pointer-events: none;">
+                  <td class="Col1"><b>2</b></td>
+                  <td class="Col2">
+                      <p>הנושא / ההחלטה ופרטיו : </p>
+                      <div id="ItemSubject2Print" placeholder="---" class="tblTextArea disabled-preview" maxlength="1000" contenteditable="true"></div>
+                  </td>
+                  <td class="Col3">
+                      <p>ההחלטה שעל סדר היום מובאת</p>
+                      <div class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="IsItemForVoting2Print" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                      <br /><br />
+                      <p>סוג הרוב הנדרש לאישור </p>
+                      <div class="select-box-preview disabled-preview" class="select-box-preview disabled-preview" style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="MajorityRequired2Print" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                  </td>
+                  </tr>
+                  <tr style="cursor: auto; border-bottom: none; pointer-events: none;">
+                  <td class="Col1"><b>3</b></td>
+                  <td class="Col2">
+                      <p>הנושא / ההחלטה ופרטיו : </p>
+                      <div id="ItemSubject3Print" placeholder="---" class="tblTextArea disabled-preview" maxlength="1000" contenteditable="true"></div>
+                  </td>
+                  <td class="Col3">
+                      <p>ההחלטה שעל סדר היום מובאת</p>
+                      <div class="select-box-preview disabled-preview"  style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="IsItemForVoting3Print" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                      <br /><br />
+                      <p>סוג הרוב הנדרש לאישור </p>
+                      <div class="select-box-preview disabled-preview"  style="width:250px; margin-right:0px !important">
+                      <div class="select-box__current-preview" id="MajorityRequired3Print" tabindex="1" data-value="-1">
+                          <span class="select-box__placeholder">---</span>
+                      </div>
+                      </div>
+                  </td>
+                  </tr>
+              </tbody>
+              </table>
+          </div>
+          <div class="form-row-preview" style="padding-top:30px">
+              <p>צרוף דוח זימון האסיפה:</p><br />
+              <div class="filePreview">
+              <span id="DetailedTopicsFilePrint" class="fileNamePreview"></span>
+              <i id="file1Print" class='bx bx-paperclip fileIconPreview'></i>
+              </div>
+          </div>
+          </div>
+          <div class="fields-block-preview" id="block-4-print">
+          <div class="form-paragraph-row-preview">
+              <p ><b>4. </b> מצורף/ים </p>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesVotingFilePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">נוסח כתב הצבעה</p>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesPositionFilePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">הודעת עמדה</p>
+          </div>
+          <div class="form-row-preview" style="padding-top:30px">
+              <div class="filePreview">
+              <span id="VotingFilePrint" class="fileNamePreview"></span>
+              <i id="file2Print" class='bx bx-paperclip fileIconPreview'></i>
+              </div>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px;padding-top:30px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesAppointmentDeclarationPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">הצהרת מינוי נציג לנציגות </p>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesCorrectedDeedOfTrustPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">שטר נאמנות מתוקן</p>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesApprovalRequestPrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">בקשה לאישור הסדר נושים לפי סעיף 350 </p>
+          </div>
+          <div class="form-row-preview" style="padding-right:25px">
+              <div class="select-box-preview disabled-preview" style="width:100px; margin-right:0px !important">
+              <div class="select-box__current-preview" id="IncludesOtherFilePrint" tabindex="1" data-value="-1">
+                  <span class="select-box__placeholder">---</span>
+              </div>
+              </div>
+              <p style="padding-right: 10px;">אחר</p>
+              <div id="OtherFileDetailsPrint" placeholder="---" maxlength="100" contenteditable="true" class="disabled-preview"
+              ></div>
+          </div>
+          <div class="form-row-preview" style="padding-top:30px">
+              <div class="filePreview">
+              <span id="Field117FilePrint" class="fileNamePreview"></span>
+              <i id="file3Print" class='bx bx-paperclip fileIconPreview'></i>
+              </div>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר: במידה וצורף כתב הצבעה ו/או הודעת עמדה יש לוודא כי הם ערוכים לפי תקנות ניירות ערך (הצבעה בכתב, הודעות עמדה והוכחת בעלות בתעודות התחייבות לצורך הצבעה באסיפת מחזיקים של תעודות התחייבות), התשע"ה-2015. </span>
+          </div>
+          <div class="form-row-preview">
+              <p>קישורית לאתר מערכת ההצבעות שבו ניתן להצביע:</p>
+              <a class="std-link" href="https://votes.isa.gov.il/" target="_blank">מערכת ההצבעות</a>
+          </div>
+          <div class="form-row-preview">
+              <span class="clsRemark">הסבר: זכאים הרשאים להצביע במערכת יקבלו את פרטי הגישה למערכת מחברי הבורסה. </span>
+          </div>
+          </div>
+          <div class="fields-block-preview" id="block-5-print">
+          <div class="form-paragraph-row-preview">
+              <p ><b>5. </b>המניין החוקי לקיום האסיפה:</p>
+          </div>
+          <div class="form-row-preview">
+              <div id="ValidQuorumConditionPrint" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;margin-top:-15px"></div>
+          </div>
+          <div class="form-paragraph-row-preview" style="padding-top: 40px;">
+              <p ><b>6.</b></p>
+              <div class="radioBtn" style="pointer-events: none;">
+              <label><input type="radio" name="e" id="RB_MeetingHeldOnPrint" style="pointer-events: none;border-color: #888 !important;--c: #888 !important;"> בהעדר מניין חוקי, האסיפה הנדחית תתקיים בתאריך </label>
+              </div>
+              <input class="date-field-preview disabled-preview" type="date" id="QuorumPostponedMeetingDatePrint" name="datepicker">
+              <p>, בשעה </p>
+              <input class="date-field-preview disabled-preview" id="QuorumPostponedMeetingTimePrint" type="time" name="appt-time" value="--:--" />
+          </div>
+          <div class="form-row-preview" style="padding-right:35px;margin-top:-12px">
+              <p>בכתובת</p>
+              <div id="QuorumPostponedMeetingAddressPrint" placeholder="---" maxlength="1000" contenteditable="true" class="disabled-preview" style="width:656px"></div>
+          </div>
+          <div class="form-row-preview">
+              <div class="radioBtn" style="padding-right: 23px;margin-top:-12px;pointer-events: none;">
+              <label><input type="radio" name="e" id="RB_MeetingCancelPrint" style="pointer-events: none;border-color: #888 !important;--c: #888 !important;"> בהעדר מניין חוקי האסיפה לא תתקיים.</label>
+              </div>
+          </div>
+
+          <div class="form-paragraph-row-preview" style="padding-top: 40px;">
+              <p ><b>7. </b> המקום והזמנים שבהם ניתן לעיין בכל הצעת החלטה שנוסחה לא הובא במלואו בפרוט סדר היום לעיל</p>
+          </div>
+          <div class="form-row-preview">
+              <div id="MeetingExtraInformationPrint" class="disabled-preview" placeholder="---" maxlength="200" contenteditable="true" style="width:550px;margin-right:25px;margin-top:-15px"></div>
+          </div>
+          <div class="form-row-preview">
+              <p >מזהה אסיפה: </p>
+              <input class="reference-num disabled-preview" type="text" id="UniqueMeetingProofIdPrint" placeholder="---" maxlength="14">
+              <div class="reference-num__label" id="UniqueMeetingProofIdError"></div>
+          </div>
+          <div class="phSpace"></div>
+          <div class="form-row-preview">
+              <div id="TextHofshiPrint" class="disabled-preview" placeholder="---" maxlength="1000" contenteditable="true" style="width:650px;margin-right:25px;"></div>
+          </div>
+          <div class="form-row-preview">
+              <p>מספרי אסמכתאות של מסמכים קודמים בנושא (אין האזכור מהווה הכללה על דרך הפניה): </p>
+          </div>
+          <div class="form-row-preview" style="padding-right:15px;margin-top:-15px">
+              <input class="reference-num disabled-preview" type="text" id="FooterProofNum1Print" placeholder="---" maxlength="14">
+              <input class="reference-num disabled-preview" type="text" id="FooterProofNum2Print" placeholder="---" maxlength="14">
+              <input class="reference-num disabled-preview" type="text" id="FooterProofNum3Print" placeholder="---" maxlength="14">  
+          </div>
+          </div>
+      </form>  
+      </div>
+    </div>
+    <div class="printFormFooter">
+      <div class="AddInfoArea-preview">
+        <div class="card-preview">
+            <div class="front">
+              <div class="flip-box-content-front-print">
+                <span style="font-weight: 600;font-size: 17px;">פרטי החברה</span>
+                  <ul class="">
+                    <li >
+                      <i class='bx bx-buildings' ></i>
+                      <span>אבא הילל סילבר 12, רמת גן</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-phone-call'></i>
+                      <span>077-7777777, 03-5540324</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-envelope' ></i>
+                      <span>contact@ayalon-ins.co.il</span>
+                    </li>
+                    <li>
+                      <i class='bx bx-laptop' ></i>
+                      <a href="https://www.ayalon-ins.co.il/" target=”_blank”>www.ayalon-ins.co.il</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <div class="back">
+              <div class="flip-box-content-back-print">
+                <span style="font-weight: 600;font-size: 17px;">פרטי חותם</span>
+                <ul class="">
+                  <li >
+                    <i class='bx bx-buildings' ></i>
+                    <span>אבא הילל סילבר 12, רמת גן</span>
+                  </li>
+                  <li>
+                    <i class='bx bx-phone-call'></i>
+                    <span>077-7777777, 03-5542361</span>
+                  </li>
+                  <li>
+                    <i class='bx bx-envelope' ></i>
+                    <span>israel-i@ayalon-ins.co.il</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="AssigneeNamePrint">
+              <span style="font-weight: 600">דווח ע"י: </span>ישראל ישראל, מזכיר
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Wait for the page to finish loading
+    window.addEventListener("load", function() {
+      // Show the dashboard section
+      showSection("dashboard");
+    });
+
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.getElementsByTagName("section");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+      }
+      
+      // Show the specified section
+      const sectionToShow = document.getElementById(sectionId);
+      if (sectionToShow) {
+        sectionToShow.style.display = "block";
+      }
+
+  }
+  </script>
+  <script src="js/sidenav.js"></script>
+  <script src="js/formsearch.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/upload.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/print.js"></script>
+</body>
+</html>
